@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+  Slides from Google (slides.html5rocks.com) cleaned up for new presentations
+
+  ---------------------------------------------------------------
+
+  Copyright 2011 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Chrome DevRel Team (chrome-devrel@googlegroups.com)
+                 Alex Russell (slightlyoff@chromium.org)
+                 Brad Neuberg
+-->
+<html manifest="cache.appcache">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+    <title>HTML5 Presentation</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
+    <link id="prettify-link" href="src/prettify/prettify.css" rel="stylesheet" disabled />
+    <link href="css/moon.css" class="theme" rel="stylesheet" />
+    <link href="css/sand.css" class="theme" rel="stylesheet" />
+    <link href="css/sea_wave.css" class="theme" rel="stylesheet" />
+    <link href="css/default.css" class="theme" rel="stylesheet" media="screen" />
+	 <style media="screen">
+		.slide p { font-size: 34px; }
+		.slide ul li { font-size: 36px; list-style: square; }
+		.slide h2 { font-size: 42px; }
+		.slide h3 { font-size: 38px; }
+	 </style>
+  </head>
+  <body>
+    <div class="presentation">
+      <div id="presentation-counter">Loading...</div>
+      <div class="slides">
+        <div class="slide" id="landing-slide">
+          <section class="middle">
+            <p>Cette présentation est un site HTML5</p>
+            <p>Appuyez surla touche <span id="left-init-key" class="key">&rarr;</span> pour avancer.</p>
+          </section>
+        </div>
+
+        <div class="slide" id="controls-slide">
+          <section>
+            <p>Contrôles :</p>
+            <ul>
+              <li><span class="key">&larr;</span> et <span class="key">&rarr;</span> pour vous déplacer.</li>
+              <li><span class="key">Ctrl/Command</span> et <span class="key">+</span> ou <span class="key">-</span> pour zoomer/dézoomer.</li>
+              <li><span class="key">T</span> pour changer de thème.</li>
+              <li><span class="key">H</span> pour activer/désactiver le surlignage de code.</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="slide" id="title-slide">
+          <style>
+            #title-slide h1 { font-size: 96px; }
+            #title-slide h2 { font-size: 40px; }
+          </style>
+          <section class="middle">
+            <hgroup>
+              <h1>node.js</h1>
+              <h2>Serveur JavaScript</h2>
+            </hgroup>
+          </section>
+        </div>
+
+        <div class="slide" id="toc-slide">
+          <section>
+				<h2>Sommaire</h2>
+				<ul>
+					<li>Quoi, qui, quand ?</li>
+					<li>Version, Roadmap</li>
+					<li>D'autres paradigmes</li>
+					<li>Cas d'utilisations</li>
+					<li>Outillage</li>
+					<li>Frameworks / composants</li>
+					<li>Démo "vraie vie"</li>
+					<li>Démo</li>
+				</ul>
+          </section>
+        </div>
+
+        <div class="slide" id="what-who-when-slide">
+          <section>
+				<h2>Quoi, qui, quand ?</h2>
+<p>Lire cet <a href="http://dailyjs.com/2010/08/10/ryan-dahl-interview/">interview de Ryan</a> peut nous aider !</p>
+				<ul>
+					<li>Quoi : Un serveur JavaScript</li>
+					<li>Qui : Ryan Dahl, <a href="http://www.joyent.com/">Joyent</a></li>
+					<li>Quand : </li>
+				</ul>
+          </section>
+        </div>
+
+        <div class="slide" id="version-roadmap-slide">
+          <section>
+				<h2>Version, Roadmap</h2>
+				<ul>
+					<li>0.5.0 : version courante</li>
+					<li>Prochaine version : refonte lib réseau pour supporter Windows</li>
+				</ul>
+          </section>
+        </div>
+
+        <div class="slide" id="paradigm-shift-slide">
+          <section>
+				<h2>D'autres paradigmes</h2>
+				<ul>
+					<li>fonctionnel</li>
+					<li>événementiel</li>
+					<li>callback</li>
+					<li>asynchrone</li>
+				</ul>
+          </section>
+        </div>
+
+        <div class="slide" id="use-cases-slide">
+          <section>
+				<h3>Cas d'utilisations : </h3>
+				<ul>
+					<li>à compléter</li>
+				</ul>
+				<h3>Dans la vraie vie : </h3>
+				<ul>
+					<li><a href="http://transloadit.com/">Transload.it</a> (<a href="http://transloadit.com/blog/2011/01/slides-node-js-in-production">node in production</a>)</li>
+					<li>à compléter</li>
+				</ul>
+          </section>
+        </div>
+
+        <div class="slide" id="tooling-slide">
+          <section>
+				<h2>Outillage</h2>
+				<ul>
+					<li>IDE : <a href="http://cloud9ide.com/">Cloud9IDE</a></li>
+					<li>Tests : <a href="http://docs.jquery.com/Qunit">QUnit</a></li>
+					<li>à compléter</li>
+				</ul>
+          </section>
+        </div>
+
+        <div class="slide" id="frameworks-slide">
+			<style>
+				#frameworks-slide ul {
+					font-size: 16px;
+					text-transform: lowercase;
+					column-count: 3; -webkit-column-count: 3; -moz-column-count: 3;
+				}
+				#frameworks-slide ul li {
+					font-size: 20px;
+					padding: 0.1em;
+				}
+			</style>
+          <section>
+				<h2>Frameworks / composants</h2>
+				<ul>
+<li>Web frameworks</li>
+<li>ROUTERS</li>
+<li>STATIC FILE SERVERS</li>
+<li>MICROFRAMEWORKS</li>
+<li>FRAMEWORKS</li>
+<li>MIDDLEWARE</li>
+<li>Database (postgrel, mysql, sqlite, nosql, etc)</li>
+<li>Templating</li>
+<li>CSS Engines</li>
+<li>Content Management Systems</li>
+<li>Build and Deployment</li>
+<li>Package Management Systems</li>
+<li>Module Loader</li>
+<li>OpenSSL / Crypto / Hashing</li>
+<li>SMTP</li>
+<li>TCP / IP</li>
+<li>RPC</li>
+<li>Web Sockets & Ajax</li>
+<li>Message Queues</li>
+<li>Class systems</li>
+<li>Testing / Spec Frameworks</li>
+<li>Wrappers</li>
+<li>Parsers</li>
+<li>JSON</li>
+<li>XML</li>
+<li>COMMAND LINE OPTION PARSERS</li>
+<li>PARSER GENERATORS</li>
+<li>OTHER PARSERS</li>
+<li>Debugging / Console Utilities</li>
+<li>Compression</li>
+<li>Graphics</li>
+<li>Payment Gateways</li>
+<li>API clients</li>
+<li>Flow control / Async goodies</li>
+<li>I18n and L10n modules</li>
+<li>Boilerplates</li>
+<li>cf <a href="https://github.com/joyent/node/wiki/modules">liste exhaustive</a></li>
+				</ul>
+          </section>
+        </div>
+
+        <div class="slide" id="real-life-demo-slide">
+          <section>
+				<h2>Démo dans la vraie vie</h2>
+          </section>
+        </div>
+
+        <div class="slide" id="our-demo-slide">
+          <section>
+				<h2>Notre démo</h2>
+          </section>
+        </div>
+
+        <div class="slide" id="resources-slide">
+          <style>
+          </style>
+          <section>
+				<h2>Ressources</h2>
+				<ul>
+					<li><a href="http://rsstodolist.appspot.com/?n=node&l=100">Compilation de liens sur node (RSS)</a></li>
+				</ul>
+          </section>
+        </div>
+
+<!-- Slide "modèle" à copier / coller - ne pas oublier de changer l'id !
+        <div class="slide" id="---------CHANGE-ME--------slide">
+          <section>
+				<h2>Title</h2>
+				<ul>
+					<li>item</li>
+				</ul>
+          </section>
+        </div>
+-->
+
+      </div> <!-- slides -->
+
+    </div> <!-- presentation -->
+
+    <script src="js/slides.js"></script>
+    <!--[if lt IE 9]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
+    </script>
+    <script>CFInstall.check({ mode: "overlay" });</script>
+    <![endif]-->
+    <script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script>
+    <script src="js/slides.js"></script>
+    <script src="js/cache.js"></script>
+  </body>
+</html>
