@@ -1,5 +1,5 @@
 var md5 = require("./jshash-2.2/md5_export"),
-    shortener = require("./shortener"),
+    shortener = require("./shortener-lib"),
     express = require('express');
 
 var port = 80;
@@ -17,3 +17,9 @@ app.get('/shorten/:url', function(req, res){
 	var shortened = shortener.shorten(urlToShorten);
    res.send(shortened);
 });
+
+app.get('/', function(req, res){
+	res.sendfile(__dirname + '/shortener.html');
+});
+
+
