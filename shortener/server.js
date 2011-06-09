@@ -4,7 +4,7 @@ var md5 = require("./jshash-2.2/md5_export"),
 
 var shortUrlsCache = {};
 
-var port = 80;
+var port = 8000;
 
 var app = express.createServer();
 app.configure(function() {
