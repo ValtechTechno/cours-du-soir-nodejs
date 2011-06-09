@@ -1,10 +1,8 @@
-var sys = require("sys"),  
-    http = require("http"),
-    md5 = require("./jshash-2.2/md5_export"),
+var md5 = require("./jshash-2.2/md5_export"),
     shortener = require("./shortener"),
     express = require('express');
 
-var port = 8000;
+var port = 80;
 
 var app = express.createServer();
 app.configure(function() {

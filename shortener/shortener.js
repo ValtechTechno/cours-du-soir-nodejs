@@ -5,7 +5,6 @@ var table = new Array('!','"','#','$','%','&',"'",'(',')','*','+',',','-','.','0
 'Y','Z','[',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w',
 'x','y','z','{','|','}','~');
 
-
 var shorten = function(url){
 	var md5 = md5lib.hex_md5(url);
 	var shortened = '';
@@ -15,7 +14,7 @@ var shorten = function(url){
 		var charr = table[intt % table.length];
 		shortened += charr;
 	}
-	return shortened;
+	return 'http://demo/' + shortened;
 };
 
 exports.shorten = shorten;

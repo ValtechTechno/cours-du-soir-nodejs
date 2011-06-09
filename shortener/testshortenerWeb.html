@@ -1,59 +1,53 @@
+<!DOCTYPE html>
 <html>
-<header>
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<!--<script type="text/javascript" src="shortener.js"></script>-->
-<script type="text/javascript">
-  google.load("jquery", "1.6"); 
-  google.setOnLoadCallback(function() {
+<head>
+	<style>
+		label { width: 6em; float: left; }
+		input { width: 30em; border: 1px solid black; margin: 0.25em; }
+		input[disabled] { background-color: black; color: white; }
+		input#url { background-color: orange; }
+	</style>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		var require = function() {}; // Mocking requirejs
+		var exports = []; // Mocking requirejs
 
-	var displayURL = function(url){
-		$("#short_remote").val(url);
-	};
+		google.load("jquery", "1.6"); 
+		google.setOnLoadCallback(function() {
 
-	var error = function(xhr){
-		$("#short_remote").val("erreur");
-	};
-	
-	var toMD5 = function(){
-		var url = $("#url").val();
-/*		var md5 = hex_md5(url);
-		$("#md5").val(md5);
-		var shortened = shorten($("#url").val());
-		$('#short').val(shortened);
-*/
-		$.get('/shorten/' + url, displayURL);
+			md5lib = { 'hex_md5' : hex_md5 };  // Mocking md5lib
 
-	};
+			var displayURL = function(url){
+				$("#remote").val(url);
+			};
 
-	$("#translate").click(toMD5);
-  });
-</script>
+			var shortenAction = function(){
+				var url = $("#url").val();
 
+				// Local
+				var shortened = shorten(url);
+				$("#local").val(shortened);
 
-</header>
+				// Remote
+				$.get('/shorten/' + encodeURIComponent(url), displayURL);
+			};
 
+			$("#translate").click(shortenAction);
+	  });
+	</script>
+	<script type="text/javascript" src="jshash-2.2/md5_export.js"></script>
+	<script type="text/javascript" src="shortener.js"></script>
+</head>
 <body>
-
-<div id="divForm">
-<form action>
-	<div>
-		url:<input type="text" id="url" size="64"/>
-	</div>
-
-	<div>
-		md5:<input type="text" id="md5" size="32" readonly="readonly"/>
-	</div>
-	<div>
-		short local:<input type="text" id="short" size="32" readonly="readonly"/>
-	</div>
-	<div>
-		short remote:<input type="text" id="short_remote" size="32" readonly="readonly"/>
-	</div>
-
-	<div>
-		<button type="button"  name="translate" id="translate">GO</button>
-	</div>
-</form>
-</div>
-
+	<h1>Local and remote shortener demo</h1>
+	<form>
+		<fieldset>
+			<legend>Shorten an url</legend>
+			<label for="url">url</label>:<input type="url" id="url" size="256" value="http://" /><br/>
+			<label for="local">local</label>:<input type="text" id="local" readonly disabled /><br/>
+			<label for="remote">remote</label>:<input type="text" id="remote" readonly disabled /><br/>
+			<button type="button" id="translate">GO</button>
+		</fieldset>
+	</form>
 </body>
+</html>
