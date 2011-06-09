@@ -1,0 +1,64 @@
+<html>
+<header>
+<script type="text/javascript" 
+        src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="jshash-2.2/md5-min.js"></script>
+<!--<script type="text/javascript" src="shortener.js"></script>-->
+<script type="text/javascript">
+  google.load("jquery", "1.4"); 
+  google.setOnLoadCallback(function() {
+
+	var displayURL = function(url){
+		$("#short_remote").val(s);
+	};
+
+	var error = function(xhr){
+		$("#short_remote").val("erreur");
+	};
+	
+	var toMD5 = function(){
+		var url = $("#url").val();
+		var md5 = hex_md5(url);
+		$("#md5").val(md5);
+/*		var shortened = shorten($("#url").val());
+		$('#short').val(shortened);
+*/
+
+
+		$.get('http://localhost:8080',{'url': url}, 
+			displayURL, error, "text");
+
+	};
+
+	$("#translate").click(toMD5);
+  });
+</script>
+
+
+</header>
+
+<body>
+
+<div id="divForm">
+<form action>
+	<div>
+		url:<input type="text" id="url" size="64"/>
+	</div>
+
+	<div>
+		md5:<input type="text" id="md5" size="32" readonly="readonly"/>
+	</div>
+	<div>
+		short local:<input type="text" id="short" size="32" readonly="readonly"/>
+	</div>
+	<div>
+		short remote:<input type="text" id="short_remote" size="32" readonly="readonly"/>
+	</div>
+
+	<div>
+		<button type="button"  name="translate" id="translate">GO</button>
+	</div>
+</form>
+</div>
+
+</body>
