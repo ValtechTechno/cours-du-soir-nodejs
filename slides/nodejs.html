@@ -83,7 +83,7 @@
 				<h2>Sommaire</h2>
 				<ul>
 					<li>Quoi, qui, quand ?</li>
-					<li>Version, roadmap</li>
+					<li>Versions, roadmap</li>
 					<li>D'autres paradigmes</li>
 					<li>Outillage</li>
 					<li>Frameworks / composants</li>
@@ -94,17 +94,16 @@
 
         <div class="slide" id="what-who-when-slide">
           <style>
-				#what-who-when-slide img { margin-top: 0.1em; float: right; }
+				#what-who-when-slide img { border: 1px solid black; }
           </style>
           <section>
 				<h2>Quoi, qui, quand ?</h2>
-<p>Lire cet <a href="http://dailyjs.com/2010/08/10/ryan-dahl-interview/">interview de Ryan</a> peut nous aider !</p>
 				<ul>
-					<li>Quoi : framework pour construire des serveurs en JavaScript</li>
-					<li>Qui : Ryan Dahl, <a href="http://www.joyent.com/" style="border-bottom: 0"><img src="imgs/joyent.png" alt="Joyent" /></a></li>
+					<li>Quoi : Framework pour construire des serveurs en JavaScript</li>
+					<li>Qui : Ryan Dahl <a href="http://www.joyent.com/" style="border-bottom: 0"><img src="imgs/joyent.png" style="padding: 0.15em; background: white; vertical-align: bottom;" alt="Joyent" /></a></li>
 					<li>
-						Quand : phénomène après la JsConf[<a href="http://jsconf.eu/2009/speaker/speakers_selected.html#entry-3356">.eu09</a>|<a href="http://jsconf.us/2010/speakers.html#ryan">.us10</a>]<br/>
-						<img src="imgs/trends.png" alt="Tendances entre Play et NodeJs" />
+						Quand : après la <a href="http://jsconf.us/2010/speakers.html#ryan">JsConf.us 2010</a><br/>
+						<img src="imgs/trends.png" style="margin-top: 0.25em; float: right;" alt="Tendances entre Play et NodeJs" />
 					</li>
 				</ul>
           </section>
@@ -112,31 +111,16 @@
 
         <div class="slide" id="version-roadmap-slide">
           <section>
-				<h2>Versions, Roadmap</h2>
+				<h2><a href="https://raw.github.com/joyent/node/master/ChangeLog">Versions</a>, <a href="http://nodejs.org/nodeconf.pdf">roadmap</a></h2>
 				<ul>
-					<li>2009.06.11: v0.0.3</li>
-					<li>2009.06.30: v0.1.0</li>
-					<li>2010.08.20: v0.2.0</li>
-					<li>2010.10.23: v0.3.0</li>
-					<li>2011.02.10: v0.4.0</li>
-					<li>2011.05.20: v0.4.8</li>
-					<li>En cours : 0.5.0 </li>
-					<li>Prochaine version : <a href="https://github.com/joyent/libuv">libuv</a></li>
-				</ul>
-          </section>
-        </div>
-
-        <div class="slide" id="use-cases-slide">
-          <section>
-				<h3>Cas d'utilisations : </h3>
-				<ul>
-					<li>scalability (cloud)</li>
-					<li>traitement de masse: shortener d'url</li>
-				</ul>
-				<h3>Dans la vraie vie : </h3>
-				<ul>
-					<li><a href="http://transloadit.com/">Transload.it</a> (<a href="http://transloadit.com/blog/2011/01/slides-node-js-in-production">node in production</a>)</li>
-					<li>à compléter</li>
+					<li>11/06/2009: v0.0.3</li>
+					<li>30/06/2009: v0.1.0</li>
+					<li>20/08/2010: v0.2.0</li>
+					<li>23/10/2010: v0.3.0</li>
+					<li>10/02/2011: v0.4.0</li>
+					<li>20/05/2011: v0.4.8</li>
+					<li>__/__/2011: v0.5.0 instable avec <a href="https://github.com/joyent/libuv">libuv</a></li>
+					<li>__/__/201_: v0.6.0 stable</li>
 				</ul>
           </section>
         </div>
@@ -150,21 +134,37 @@
 				<h2>D'autres paradigmes</h2>
 				<ul>
 					<li>
-						Event loop
-						<pre class="js hidden">map(objects, function(e) { return e.id });</pre>
+						Fonctionnel
+						<pre class="js hidden">var n = -2.9;
+var functionToApply = [ Math.abs, Math.floor, function(n) { return n*n; } ];
+for(f in functionToApply) {
+	n = functionToApply[f](n);
+	console.log('applied function:', functionToApply[f], 'result:', n);
+}
+console.log('Final result:', n);</pre>
 					</li>
 					<li>
-						fonctionnel: exemple de map
-						<pre class="js hidden">map(objects, function(e) { return e.id });</pre>
+						Événementiel
+						<pre class="js hidden">server.addListener('connect', ...</pre>
 					</li>
-					<li>événementiel: 'onlisten' d un serveur web</li>
-					<li>callback: exmple de callback apres un get/ajax</li>
-					<li>asynchrone: callback avec un delai </li>
+					<li>
+						Callbacks asynchrones
+						<pre class="js hidden">server.addListener('connect', function(client) {...});</pre>
+					</li>
+					<li>
+						Non blocking <abbr title="Input / Output">I/O</abbr>
+						<pre class="js hidden">var result = db.query("select..."); // Blocking
+db.query("select...", function(result) {}); // Non blocking</pre>
+					</li>
+					<li>
+						Event loop
+					</li>					
 				</ul>
           </section>
           <script defer>
 				(function() {
 					$('#paradigm-shift-slide li').click(function(o) {
+						$(this).parent().find('pre').slideUp();
 						$(this).children('pre').slideToggle();
 					});
 				})();
