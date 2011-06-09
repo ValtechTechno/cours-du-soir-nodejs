@@ -2,6 +2,8 @@ var md5 = require("./jshash-2.2/md5_export"),
     shortener = require("./shortener-lib"),
     express = require('express');
 
+var shortUrlsCache = {};
+
 var port = 80;
 
 var app = express.createServer();
@@ -12,14 +14,26 @@ app.configure(function() {
 console.log("listening on " + port);
 
 app.get('/shorten/:url', function(req, res){
-	var urlToShorten = req.params.url;
-	console.log("urlToShorten: " + urlToShorten);
-	var shortened = shortener.shorten(urlToShorten);
-   res.send(shortened);
+	var longUrl = req.params.url;
+	var shortUrl = shortener.shorten(longUrl);
+	shortUrlsCache[shortUrl] = longUrl;
+	console.log("Long url [" + longUrl + "] shortened to [" + shortUrl + "]");
+   res.send(shortUrl);
+});
+
+app.get('/s/:shortUrl', function(req, res){
+	var shortUrl = req.params.shortUrl;
+
+	var longUrl = shortUrlsCache[shortUrl];
+	if (longUrl) {
+		console.log("Short url [" + shortUrl + "] redirects to [" + longUrl + "]");
+	   res.redirect(longUrl);
+	} else {
+		console.log("Short url [" + shortUrl + "] not found in cache.");
+		res.send('Short url not found');
+	}
 });
 
 app.get('/', function(req, res){
 	res.sendfile(__dirname + '/shortener.html');
 });
-
-

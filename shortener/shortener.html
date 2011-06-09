@@ -16,8 +16,10 @@
 
 			md5lib = { 'hex_md5' : hex_md5 };  // Mocking md5lib
 
-			var displayURL = function(url){
-				$("#remote").val(url);
+			var displayURL = function(hash){
+				$("#remote").val(hash);
+				var url = window.location.href + 's/' + hash;
+				$("#resultLink").attr('href', url).html(url);
 			};
 
 			var shortenAction = function(){
@@ -45,6 +47,7 @@
 			<label for="url">url</label>:<input type="url" id="url" size="256" value="http://" /><br/>
 			<label for="local">local</label>:<input type="text" id="local" readonly disabled /><br/>
 			<label for="remote">remote</label>:<input type="text" id="remote" readonly disabled /><br/>
+			<label>Link</label>:<a href="" id="resultLink"></a><br/>
 			<button type="button" id="translate">GO</button>
 		</fieldset>
 	</form>
