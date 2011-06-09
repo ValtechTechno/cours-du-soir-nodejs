@@ -40,6 +40,7 @@
 		.slide h2 { font-size: 42px; }
 		.slide h3 { font-size: 38px; }
 	 </style>
+    <script src="js/jquery-1.6.1.js"></script>
   </head>
   <body>
     <div class="presentation">
@@ -83,12 +84,11 @@
 				<ul>
 					<li>Quoi, qui, quand ?</li>
 					<li>Version, Roadmap</li>
-					<li>D'autres paradigmes</li>
 					<li>Cas d'utilisations</li>
+					<li>D'autres paradigmes</li>
 					<li>Outillage</li>
 					<li>Frameworks / composants</li>
-					<li>Démo "vraie vie"</li>
-					<li>Démo</li>
+					<li>Démos</li>
 				</ul>
           </section>
         </div>
@@ -109,30 +109,14 @@
           <section>
 				<h2>Versions, Roadmap</h2>
 				<ul>
-					<li>0.5.0 : version courante</li>
+					<li>2009.06.11: v0.0.3</li>
+					<li>2009.06.30: v0.1.0</li>
+					<li>2010.08.20: v0.2.0</li>
+					<li>2010.10.23: v0.3.0</li>
+					<li>2011.02.10: v0.4.0</li>
+					<li>2011.05.20: v0.4.8, dernière stable</li>
+					<li>En cours : 0.5.0 </li>
 					<li>Prochaine version : refonte lib réseau pour supporter Windows</li>
-					<li>
-						<ul>
-							<li>2009.06.11: v0.0.3</li>
-							<li>2009.06.30: v0.1.0</li>
-							<li>2010.08.20: v0.2.0</li>
-							<li>2010.10.23: v0.3.0</li>
-							<li>2011.02.10: v0.4.0</li>
-							<li>2011.05.20: v0.4.8, last stable</li>
-						</ul>
-					</li>
-				</ul>
-          </section>
-        </div>
-
-        <div class="slide" id="paradigm-shift-slide">
-          <section>
-				<h2>D'autres paradigmes</h2>
-				<ul>
-					<li>fonctionnel: exemple de map</li>
-					<li>événementiel: 'onlisten' d un serveur web</li>
-					<li>callback: exmple de callback apres un get/ajax</li>
-					<li>asynchrone: callback avec un delai </li>
 				</ul>
           </section>
         </div>
@@ -150,6 +134,35 @@
 					<li>à compléter</li>
 				</ul>
           </section>
+        </div>
+
+        <div class="slide" id="paradigm-shift-slide">
+          <style>
+				#paradigm-shift-slide .hidden { display: none;}
+          </style>
+          <section>
+				<h2>D'autres paradigmes</h2>
+				<ul>
+					<li>
+						fonctionnel: exemple de map
+						<pre class="js hidden">map(objects, function(e) { return e.id });</pre>
+					</li>
+					<li>
+						fonctionnel: exemple de map
+						<pre class="js hidden">map(objects, function(e) { return e.id });</pre>
+					</li>
+					<li>événementiel: 'onlisten' d un serveur web</li>
+					<li>callback: exmple de callback apres un get/ajax</li>
+					<li>asynchrone: callback avec un delai </li>
+				</ul>
+          </section>
+          <script defer>
+				(function() {
+					$('#paradigm-shift-slide li').click(function(o) {
+						$(this).children('pre').slideToggle();
+					});
+				})();
+          </script>
         </div>
 
         <div class="slide" id="tooling-slide">
@@ -220,15 +233,22 @@
           </section>
         </div>
 
-        <div class="slide" id="real-life-demo-slide">
+        <div class="slide" id="our-demo-slide">
           <section>
-				<h2>Démo dans la vraie vie</h2>
+				<h2>Nos démos</h2>
+				<ul>
+					<li>Url Shortener</li>
+					<li>Twitter Node Hello World</li>
+				</ul>
           </section>
         </div>
 
-        <div class="slide" id="our-demo-slide">
+        <div class="slide" id="conclusion-slide">
           <section>
-				<h2>Notre démo</h2>
+				<h2>Conclusion</h2>
+				<ul>
+					<li>Futur ?</li>
+				</ul>
           </section>
         </div>
 
