@@ -472,17 +472,17 @@ video {
   bottom: 4px;
 }
 
-.css {
+.html {
   background: -webkit-gradient(linear, left top, left bottom, from(#ff4), to(#ffa));
   background-color: #ff4;
   background: -moz-linear-gradient(left top, #ff4, #ffa);
 }
-.js {
+.css {
   background: -webkit-gradient(linear, left top, left bottom, from(#4f4), to(#afa));
   background-color: #4f4;
   background: -moz-linear-gradient(left top, #4f4, #afa);
 }
-.html {
+.js {
   background: -webkit-gradient(linear, left top, left bottom, from(#e88), to(#fee));
   background-color: #e88;
   background: -moz-linear-gradient(left top, #e88, #fee);
