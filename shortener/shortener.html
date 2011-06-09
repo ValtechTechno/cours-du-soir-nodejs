@@ -7,13 +7,12 @@
 		input[disabled] { background-color: black; color: white; }
 		input#url { background-color: orange; }
 	</style>
-	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="jquery/jquery-1.6.1.js"></script>
 	<script type="text/javascript">
 		var require = function() {}; // Mocking requirejs
 		var exports = []; // Mocking requirejs
 
-		google.load("jquery", "1.6"); 
-		google.setOnLoadCallback(function() {
+		$(window).load(function() {
 
 			md5lib = { 'hex_md5' : hex_md5 };  // Mocking md5lib
 
@@ -33,7 +32,7 @@
 			};
 
 			$("#translate").click(shortenAction);
-	  });
+		});
 	</script>
 	<script type="text/javascript" src="jshash-2.2/md5_export.js"></script>
 	<script type="text/javascript" src="shortener-lib.js"></script>
