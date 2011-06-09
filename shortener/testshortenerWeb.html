@@ -1,15 +1,13 @@
 <html>
 <header>
-<script type="text/javascript" 
-        src="http://www.google.com/jsapi"></script>
-<script type="text/javascript" src="jshash-2.2/md5-min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <!--<script type="text/javascript" src="shortener.js"></script>-->
 <script type="text/javascript">
-  google.load("jquery", "1.4"); 
+  google.load("jquery", "1.6"); 
   google.setOnLoadCallback(function() {
 
 	var displayURL = function(url){
-		$("#short_remote").val(s);
+		$("#short_remote").val(url);
 	};
 
 	var error = function(xhr){
@@ -18,15 +16,12 @@
 	
 	var toMD5 = function(){
 		var url = $("#url").val();
-		var md5 = hex_md5(url);
+/*		var md5 = hex_md5(url);
 		$("#md5").val(md5);
-/*		var shortened = shorten($("#url").val());
+		var shortened = shorten($("#url").val());
 		$('#short').val(shortened);
 */
-
-
-		$.get('http://localhost:8080',{'url': url}, 
-			displayURL, error, "text");
+		$.get('/shorten/' + url, displayURL);
 
 	};
 
