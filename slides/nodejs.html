@@ -82,7 +82,7 @@
           <section>
 				<h2>Sommaire</h2>
 				<ul>
-					<li>Quoi, qui, quand ?</li>
+					<li>Quoi, qui, quand, pourquoi ?</li>
 					<li>Versions, roadmap</li>
 					<li>D'autres paradigmes</li>
 					<li>Outillage</li>
@@ -97,14 +97,15 @@
 				#what-who-when-slide img { border: 1px solid black; }
           </style>
           <section>
-				<h2>Quoi, qui, quand ?</h2>
-				<ul>
-					<li>Quoi : Framework pour construire des serveurs en JavaScript</li>
+				<h2>Quoi, qui, quand, pourquoi ?</h2>
+				<ul data-build>
+					<li>Quoi : Framework serveur JavaScript</li>
 					<li>Qui : Ryan Dahl <a href="http://www.joyent.com/" style="border-bottom: 0"><img src="imgs/joyent.png" style="padding: 0.15em; background: white; vertical-align: bottom;" alt="Joyent" /></a></li>
 					<li>
 						Quand : après la <a href="http://jsconf.us/2010/speakers.html#ryan">JsConf.us 2010</a><br/>
-						<img src="imgs/trends.png" style="margin-top: 0.25em; float: right;" alt="Tendances entre Play et NodeJs" />
+						<img src="imgs/trends.png" style="margin: 0.25em 0 0 2em;" alt="Tendances entre Play et NodeJs" />
 					</li>
+					<li>Pourquoi : <cite>Node's goal is to provide an easy way to build scalable network programs.</cite></li>
 				</ul>
           </section>
         </div>
@@ -158,7 +159,11 @@ db.query("select...", function(result) {}); // Non blocking</pre>
 					</li>
 					<li>
 						Event loop
-					</li>					
+					</li>
+					<li>
+						node ?	
+						<pre class="js hidden">event loop + non blocking I/O + V8</pre>
+					</li>
 				</ul>
           </section>
           <script defer>
@@ -242,7 +247,7 @@ db.query("select...", function(result) {}); // Non blocking</pre>
         <div class="slide" id="our-demo-slide">
           <section>
 				<h2>Nos démos</h2>
-				<ul>
+				<ul data-build>
 					<li>Url Shortener</li>
 					<li>Twitter Node Hello World</li>
 				</ul>
@@ -252,18 +257,22 @@ db.query("select...", function(result) {}); // Non blocking</pre>
         <div class="slide" id="conclusion-slide">
           <section>
 				<h2>Conclusion</h2>
-				<ul>
-					<li>Futur ?</li>
+				<ul data-build>
+					<li>Non blocking I/O</li>
+					<li>Event loop</li>
+					<li>Partage de code entre client et serveur</li>
 				</ul>
           </section>
         </div>
 
         <div class="slide" id="resources-slide">
-          <style>
-          </style>
           <section>
 				<h2>Ressources</h2>
 				<ul>
+					<li><a href="http://nodejs.org/#about">nodejs.org/#about</a> (description, slides, videos)</li>
+					<li><a href="http://github.com/joyent/node/wiki/Community">github.com/joyent/node/wiki/Community</a> (doc)</li>
+					<li><a href="https://github.com/joyent/node">github.com/joyent/node</a> (source)</li>
+					<li><a href="https://twitter.com/ryah">twitter.com/@ryah</a></li>
 					<li><a href="http://rsstodolist.appspot.com/?n=node&l=100">Compilation de liens sur node (RSS)</a></li>
 				</ul>
           </section>
