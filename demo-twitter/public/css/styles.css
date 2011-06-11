@@ -1,0 +1,9 @@
+dialog { display: block; height: 40%; overflow-y: scroll; border: 1px solid #999;}
+dialog dd { color: #111; }
+dialog dt { font-weight: bold; }
+
+h1.fromServer { border-bottom: 1px solid orange; }
+h1.fromClient { border-bottom: 1px solid red; }
+
+dialog.fromServer dt { color: orange; }
+dialog.fromClient dt { color: red; }
