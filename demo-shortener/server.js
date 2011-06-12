@@ -11,6 +11,7 @@ app.configure(function() {
 	app.use(app.router);
 	app.use(express.static(__dirname));
 }).listen(port);
+
 console.log("listening on " + port);
 
 app.get('/shorten/:url', function(req, res){
@@ -27,10 +28,10 @@ app.get('/s/:shortUrl', function(req, res){
 	var longUrl = shortUrlsCache[shortUrl];
 	if (longUrl) {
 		console.log("Short url [" + shortUrl + "] redirects to [" + longUrl + "]");
-	   res.redirect(longUrl);
+	   	res.redirect(longUrl);
 	} else {
 		console.log("Short url [" + shortUrl + "] not found in cache.");
-		res.send('Short url not found');
+		res.send('Short url not found', 404);
 	}
 });
 

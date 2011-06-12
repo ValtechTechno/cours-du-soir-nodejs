@@ -9,19 +9,21 @@
 	</style>
 	<script type="text/javascript" src="jquery/jquery-1.6.1.js"></script>
 	<script type="text/javascript">
-		var require = function() {}; // Mocking requirejs
-		var exports = []; // Mocking requirejs
+		var require = function() {}; // Mocking require
+		var exports = []; // Mocking exports
 
-		$(window).load(function() {
+		$(window).load(function() {//on page loaded
 
 			md5lib = { 'hex_md5' : hex_md5 };  // Mocking md5lib
 
+			//display remote shortener result
 			var displayURL = function(hash){
 				$("#remote").val(hash);
 				var url = window.location.href + 's/' + hash;
 				$("#resultLink").attr('href', url).html(url);
 			};
 
+			//call shortener services
 			var shortenAction = function(){
 				var url = $("#url").val();
 
@@ -33,7 +35,7 @@
 				$.get('/shorten/' + encodeURIComponent(url), displayURL);
 			};
 
-			$("#translate").click(shortenAction);
+			$("#translate").click(shortenAction);//on click
 		});
 	</script>
 	<script type="text/javascript" src="jshash-2.2/md5_export.js"></script>
