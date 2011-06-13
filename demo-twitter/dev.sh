@@ -1,2 +1,2 @@
 NODE_ENV=development
-~/local/node/bin/node server.js
+supervisor -p server.js
