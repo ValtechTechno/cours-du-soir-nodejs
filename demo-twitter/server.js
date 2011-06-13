@@ -44,6 +44,6 @@ var getTweets = function() {
 		});
 	});
 	request.end();
-	setTimeout(getTweets, 10000);
+	setTimeout(getTweets, 5000);
 }
 getTweets();

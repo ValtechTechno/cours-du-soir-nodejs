@@ -6,11 +6,15 @@ $(window).load(function() {
 	var renderLastTweets = function() {
 		$.getJSON('/lastTweets.json', function(data) {
 			var htmlFragment = exports.renderTweets(Mustache, data, 'client');
-			dialog.fadeOut().html(htmlFragment).fadeIn();
-			h2.fadeOut().html('Last refresh: ' + new Date()).fadeIn();
+			dialog.fadeOut('fast', function() {
+				dialog.html(htmlFragment).fadeIn();
+			});
+			h2.fadeOut('fast', function() {
+				h2.html('Last refresh: ' + new Date()).fadeIn();
+			});
 		});
-		setTimeout(renderLastTweets, 10000);
+		setTimeout(renderLastTweets, 5000);
 	};
-	setTimeout(renderLastTweets, 10000);
+	setTimeout(renderLastTweets, 5000);
 });
 
