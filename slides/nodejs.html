@@ -186,7 +186,7 @@ db.query("select...", function(result) {}); // Non blocking</pre>
           <section>
 				<h2>Outillage</h2>
 				<ul>
-					<li><abbr title="Integrated Development Environment">IDE</abbr> : <a href="http://cloud9ide.com/">Cloud9IDE</a></li>
+					<li><abbr title="Integrated Development Environment">IDE</abbr> : <a href="http://cloud9ide.com/">Cloud9IDE</a>, <a href="http://www.eclipse.org/orion/">Orion</a></li>
 					<li>Gestion des dépendances : <a href="http://npmjs.org/"><abbr title="Node Package Manager">NPM</abbr></a></li>
 					<li>Modules : <a href="http://www.commonjs.org/">CommonJS</a></li>
 					<li>Testing : <a href="http://docs.jquery.com/Qunit">QUnit</a>, <a href="http://visionmedia.github.com/jspec/">JSpec</a></li>
@@ -263,15 +263,27 @@ db.query("select...", function(result) {}); // Non blocking</pre>
         </div>
 <!-- URL SHORTENER -->
         <div class="slide" id="urlshortener-slide">
+	  <style>
+		.shortenedUrl  {
+			font-size: 32px;
+			color:grey;
+		}
+	  </style>
           <section>
 				<h2>URL Shortener</h2>
 				<ul data-build>
-					<li>http://www.valtech.fr/ </li>
-					<li>MD5: 6bf10e1519934992c40086922c49001a </li>
-					<li><span style='color:red'>6bf10e15</span><span style='color:yellow'>19934992</span><span style='color:green'>c4008692</span><span style='color:blue'>2c49001a</span> </li>
-					<li>0x<span style='color:red'>6bf10e15</span> = 1810959893</li>
-					<li>1810959893 % 76 = 49</li>
-					<li>tab[49]: <span style='color:red'>`</span></li>
+					<li>shortener</li>
+					<ul data-build>
+						<li>http://www.valtech.fr/ </li>
+						<li>MD5: <span style='color:red'>6bf10e15</span><span style='color:yellow'>19934992</span><span style='color:green'>c4008692</span><span style='color:blue'>2c49001a</span></li>
+						<li>0x<span style='color:red'>6bf10e15</span> = 1810959893</li>
+						<li>1810959893 % 76 = 49</li>
+						<li>tab[49]: <span style='color:red'>`</span></li>
+					</ul>
+					<li>reverse url</li>
+					<ul>
+						<li><span class="shortenedUrl">http://localhost/s/`CGO</span> :: http://www.valtech.fr/</li>
+					</ul>
 				</ul>
           </section>
         </div>
