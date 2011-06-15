@@ -1,6 +1,5 @@
 //imports
-var md5 = require("./jshash-2.2/md5_export"),
-    shortener = require("./shortener-lib"),
+var shortener = require("./shortener-lib"),
     express = require('express');
 
 //urls corresponding table
