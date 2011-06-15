@@ -6,6 +6,7 @@ var shortener = require("./shortener-lib"),
 var shortUrlsCache = {};
 
 //running port
+//var port = process.env.C9_PORT;
 var port = 8000;
 
 //server
